@@ -1,0 +1,12 @@
+detector: yolo
+# Settings used for the README screenshots on OpenCV's sample clip (videos/vtest.avi).
+# That clip has about 5 to 8 people in view, so thresholds are set to show the levels.
+# For your own scene, set thresholds that match it (see config.example.yaml).
+source: videos/vtest.avi
+frame_width: 640
+process_every_n_frames: 3
+medium_threshold: 4
+high_threshold: 6
+show_window: false
+output_video: output/demo.mp4
+log_csv: output/counts.csv
