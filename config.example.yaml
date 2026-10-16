@@ -1,0 +1,25 @@
+# Copy this file to config.yaml and edit it:  cp config.example.yaml config.yaml
+# Then run:  crowd-detection --config config.yaml
+
+source: 0                    # 0 = default webcam, or "videos/street.mp4", or "rtsp://user:pass@192.168.1.10:554/stream"
+
+detector: yolo               # "yolo" = accurate (run scripts/download_models.py first); "hog" = no download, weak
+yolo_input_size: 608         # bigger sees smaller people but is slower. Multiple of 32 (416, 608, 800)
+model_dir: models            # where the YOLO files are saved
+# min_confidence: 0.25       # ignore weaker detections (leave unset for a good default)
+
+frame_width: 640             # frames are resized to this width before detection
+process_every_n_frames: 2    # 1 = check every frame (slow), 3 = check every third frame (fast)
+nms_threshold: 0.4           # lower = merge overlapping boxes more aggressively
+
+medium_threshold: 5          # this many people or more = MEDIUM
+high_threshold: 10           # this many people or more = HIGH (triggers an alert)
+alert_cooldown_seconds: 10   # minimum time between two alerts
+
+grid_rows: 3                 # per-area counts shown on the video
+grid_cols: 3
+# roi: [0.0, 0.3, 1.0, 1.0]  # count only inside this box: [left, top, right, bottom] as 0-1 fractions
+
+show_window: true            # set false on a server with no display
+output_video: null           # e.g. "output/result.mp4" to save the annotated video
+log_csv: output/counts.csv   # set to null to turn off logging

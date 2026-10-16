@@ -1,0 +1,4 @@
+# Kept for people who prefer pip install -r. The source of truth is pyproject.toml.
+opencv-python>=4.8,<5
+numpy>=1.24
+PyYAML>=6.0

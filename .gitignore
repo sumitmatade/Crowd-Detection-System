@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+build/
+dist/
+
+# Project
+config.yaml
+output/
+*.mp4
+*.avi
+*.mov
+
+# Secrets (RTSP URLs often contain passwords)
+.env
+*.key
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Downloaded assets (fetched by scripts/download_*.py)
+models/
+videos/
+*.weights
